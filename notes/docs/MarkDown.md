@@ -16,6 +16,7 @@ Context Menu:
     - [Links](#links)
         - [Basic Links](#inline-link-and-reference-link)
         - [Footnote](#footnote)
+    - [Tables](#tables)
 
 
 # Introduction
@@ -314,6 +315,21 @@ Another Footnote.[^2]
 
 ### Badges
 ![GitHub forks](https://img.shields.io/github/forks/lifeparticle/Markdown-Cheatsheet?style=for-the-badge)
+
+### Tables
+Tables aren't part of the core Markdown spec, but they are part of GFM and Markdown Here supports them. 
+
+``` Markdown
+| Header1 | Header2 | Header3|
+| --------|---------|--------|
+| row1 col1|Row1 Col2|Row3 Col3|
+| row2 |row22| row333|
+```
+
+| Header1 | Header2 | Header3|
+| --------|---------|--------|
+| row1 col1|Row1 Col2|Row3 Col3|
+| row2 |row22| row333|
 
 
 
