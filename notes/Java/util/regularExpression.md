@@ -4,6 +4,7 @@ Regular Expressions, abbreviated as Regex or Regexp, are a string of characters 
 # Refereences:
 - [Regex Lean](https://regexlearn.com) is a very good web site can help you to learn Regex(**Highly recommended to take the online courses**) and also can just check the [Regex Lean Cheetsheet](https://regexlearn.com/cheatsheet) or [My Cheetsheet](#my-cheetsheet) below.
 - [Java Regex Chinese Simplified](https://cloud.tencent.com/developer/information/java%E4%B8%AD%E7%9A%84regular-expression)
+- [Regex Debug Website](https://regex101.com/)
 
 
 # My Cheetsheet
@@ -141,6 +142,51 @@ String text = "The quick brown fox jumps over the lazy dog";
 String replaced = text.replaceAll("(?i)fox", "cat");
 System.out.println(replaced);  // The quick brown cat jumps over the lazy dog
 ```
+
+How to use the grouping in java:
+
+```Java
+/*
+Input:
+5
+Goodbye bye bye world world world
+Sam went went to to to his business
+Reya is is the the best player in eye eye game
+in inthe
+Hello hello Ab aB
+
+Output:
+Goodbye bye world
+Sam went to his business
+Reya is the best player in eye game
+in inthe
+Hello Ab
+
+*/
+
+        String regex = "\\b(\\w+)\\b(\\W+\\b\\1\\b)+";
+        Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+
+        Scanner in = new Scanner(System.in);
+        int numSentences = Integer.parseInt(in.nextLine());
+        
+        while (numSentences-- > 0) {
+            String input = in.nextLine();
+            
+            Matcher m = p.matcher(input);
+            
+            // Check for subsequences of input that match the compiled pattern
+            while (m.find()) {
+                input = input.replaceAll(m.group(), m.group(1));
+            }
+            
+            // Prints the modified sentence.
+            System.out.println(input);
+        }
+        
+        in.close();
+```
+
 
 ## String Split
 
